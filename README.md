@@ -2,7 +2,13 @@
 
 ## Installation guide for PgAmin4 on Ubuntu 20.04 using Nginx
 
+Install ubuntu packages
+```
 sudo apt install python3-pip build-essential python3-dev libssl-dev libffi-dev python3-virtualenv
+```
+
+Setup python environment
+```
 mkdir pgadmin
 cd pgadmin
 virtualenv pgadmin
@@ -10,6 +16,7 @@ source pgadmin/bin/activate
 
 sudo pip3 install pgadmin4
 sudo pip3 install uwsgi
+```
 
 Create local pgAmin config file
 ```
