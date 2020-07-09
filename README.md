@@ -92,6 +92,16 @@ StandardError=/var/log/uwsgi/error.log
 WantedBy=multi-user.target
 ```
 
+Enable uwsgi.service
+```
+sudo systemctl enable uwsgi
+```
+
+Start uwsgi 
+```
+sudo systemctl start uwsgi
+```
+
 Configure Nginx
 ```
 upstream pgadmin {
