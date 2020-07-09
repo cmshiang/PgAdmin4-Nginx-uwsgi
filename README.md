@@ -105,6 +105,32 @@ sudo systemctl start uwsgi
 
 Configure Nginx
 ```
+upstream pgadmin {
+      server unix:/tmp/pgadmin.sock;
+}
+server {
+    listen 5050;
+    server_name  _;
+    charset      utf-8;
+    client_max_body_size 75M;
+    location / {
+        include uwsgi_params;
+        uwsgi_pass  pgadmin;
+    }
+}
+#server{
+#    listen          443 ssl;
+#    server_name     _;
+#    charset      utf-8;
+#    ssl_certificate      /etc/uwsgi/pgadmin.crt;
+#    ssl_certificate_key  /etc/uwsgi/pgadmin.key;
+#    location / {
+#        include uwsgi_params;
+#        uwsgi_pass  pgadmin;
+#    }
+#}
+```
+```
 upstream pgadmin_upstream {
   server unix:/tmp/pgadmin.sock;
 }
