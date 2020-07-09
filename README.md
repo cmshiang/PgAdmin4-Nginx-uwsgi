@@ -53,6 +53,7 @@ processes       = 1
 socket          = /tmp/pgadmin.sock
 chmod-socket    = 664
 vacuum          = true
+logto           = /var/log/uwsgi.log
 ```
 
 Change the owner of /var/log/pgadmin and /var/lib/pgadmin to www-data
